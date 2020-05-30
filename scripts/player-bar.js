@@ -39,9 +39,9 @@
         const currentTime = player.getTime();
         const duration = player.getDuration();
         const percent = (currentTime / duration) * 100;
-        $('#time-control .current-time').text( currentTime );
+        $('#time-control .current-time').text( helper.parseTime(currentTime) );
+        $('#time-control .total-time').text( helper.parseTime(duration) );
         $('#time-control input').val(percent);
-        $('#time-control .total-time').text( duration - currentTime );
     }, 1000);
 
     $('#time-control .total-time').on('input', function (event) {
